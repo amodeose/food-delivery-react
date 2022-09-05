@@ -1,13 +1,17 @@
 import classes from "./Categories.module.css";
+import Button from "./UI/Button";
+
+const categories = ["Pasta", "Sandwiches", "Burgers", "Coffee"];
 
 const Categories = (props) => {
+  const categoryButtons = categories.map((category) => (
+    <Button>{category}</Button>
+  ));
+
   return (
     <nav className={classes.categories}>
       <h1>Choose a Category:</h1>
-      <h3>Pasta</h3>
-      <h3>Sandwiches</h3>
-      <h3>Burgers</h3>
-      <h3>Coffee</h3>
+      {categoryButtons}
     </nav>
   );
 };

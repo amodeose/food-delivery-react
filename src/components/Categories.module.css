@@ -8,7 +8,9 @@
     padding: 1rem;
 }
 
-.categories h3 {
+.categories button {
     margin: 1rem;
-    background-color: #393E46;
+    height: 3rem;
+    font-weight: bold;
+    width: 80%;
 }
