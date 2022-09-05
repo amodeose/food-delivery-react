@@ -1,4 +1,5 @@
 import classes from "./Header.module.css";
+import coverPhoto from "../assets/wallpaper.jpg";
 
 const Header = (props) => {
   return (
@@ -7,7 +8,7 @@ const Header = (props) => {
         <h1>React Kitchen</h1>
         <h3>Cart</h3>
       </div>
-      <img src={require("../assets/wallpaper.jpg")} alt="food wallpaper"/>
+      <img src={coverPhoto} alt="table with food and drinks" />
     </header>
   );
 };

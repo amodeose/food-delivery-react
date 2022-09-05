@@ -1,0 +1,14 @@
+.categories {
+    width: 25%;
+    background-color: #222831;
+    color: white;
+    height: 100vh;
+    margin-top: -4px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.categories h3 {
+    margin: 1rem;
+    background-color: #393E46;
+}

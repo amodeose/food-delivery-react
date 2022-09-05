@@ -2,13 +2,19 @@
     display:flex;
     background-color: #222831;
     color: white;
-    padding: 1rem 5rem;
+    padding: 1rem 3rem;
     justify-content: space-between;
     align-items: center;
 }
 
 .header img {
-    height: 5rem;
+    height: 8rem;
     width: 100%;
     object-fit: cover;
+    margin: 0;
+    border: none;
+}
+
+.header {
+    margin: 0;
 }
