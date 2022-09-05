@@ -1,7 +1,14 @@
-.header {
+.header div {
     display:flex;
     background-color: #222831;
     color: white;
     padding: 1rem 5rem;
     justify-content: space-between;
+    align-items: center;
+}
+
+.header img {
+    height: 5rem;
+    width: 100%;
+    object-fit: cover;
 }
