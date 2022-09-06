@@ -1,12 +1,12 @@
 .item {
   display: inline-block;
   height: 15rem;
-  background-color: #00adb5;
+  background-color: #C9D6DF;
   padding: 1rem;
   margin: 1rem;
   border-radius: 12px;
   text-align: center;
-  color: white;
+  color: black;
   animation: slide-down 300ms ease-out forwards;
 }
 
