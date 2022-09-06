@@ -7,7 +7,6 @@
   border-radius: 12px;
   text-align: center;
   color: black;
-  animation: slide-down 300ms ease-out forwards;
 }
 
 .item img {
@@ -17,13 +16,9 @@
   margin-bottom: 0.5rem;
 }
 
-@keyframes slide-down {
-  from {
-    opacity: 0;
-    transform: translateY(-1rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.itemControls {
+  display: flex;
+  justify-content: space-between;
+  margin-top:0.5rem;
+  padding: 0 1.5rem;
 }
