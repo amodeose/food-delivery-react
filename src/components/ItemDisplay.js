@@ -3,7 +3,7 @@ import items from "../assets/items";
 import Item from "./Item";
 
 const ItemDisplay = (props) => {
-  const itemCards = items.pasta.map((item) => (
+  const itemCards = items[props.category].map((item) => (
     <Item title={item.title} img={item.img} price={item.price} />
   ));
 
