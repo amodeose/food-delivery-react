@@ -1,18 +1,28 @@
 .item {
-    height: 15rem;
-    background-color: #00ADB5;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 12px;
-    text-align: center;
-    color: white;
-    
+  height: 15rem;
+  background-color: #00adb5;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  animation: slide-down 300ms ease-out forwards;
 }
 
 .item img {
-    height: 10rem;
-    width: 13rem;
-    border-radius: 12px;
-    margin-bottom: 0.5rem;
+  height: 10rem;
+  width: 13rem;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
 }
 
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
