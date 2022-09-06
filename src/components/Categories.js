@@ -1,7 +1,7 @@
 import classes from "./Categories.module.css";
 import Button from "./UI/Button";
 
-const categories = ["Pasta", "Sandwiches", "Burgers", "Coffee"];
+const categories = ["Pasta", "Burgers", "Coffee"];
 
 const Categories = (props) => {
   const categoryButtons = categories.map((category) => (
