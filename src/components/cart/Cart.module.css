@@ -1,0 +1,9 @@
+.cartContent {
+    text-align: center;
+}
+
+.cartItems {
+    text-align: right;
+    width: 25rem;
+    margin: 0 auto;
+}

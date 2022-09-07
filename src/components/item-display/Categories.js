@@ -1,12 +1,12 @@
 import classes from "./Categories.module.css";
-import Button from "./UI/Button";
+import Button from "../UI/Button";
 
 const categories = ["Pasta", "Burgers"];
 
 const Categories = (props) => {
 
   const categoryButtons = categories.map((category) => (
-    <Button onClick={() => {props.chooseCategory(category)}}>{category}</Button>
+    <Button key={category} onClick={() => {props.chooseCategory(category)}}>{category}</Button>
   ));
 
   return (

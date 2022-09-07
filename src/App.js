@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import Header from "./components/Header";
-import Main from "./components/Main";
+import Main from "./components/item-display/Main";
 import { useState } from "react";
-import Cart from "./components/Cart";
+import Cart from "./components/cart/Cart";
 
 function App() {
 

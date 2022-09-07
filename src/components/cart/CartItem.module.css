@@ -1,0 +1,20 @@
+.cartItem {
+    margin: 1rem;
+    border-bottom: 2px solid black;
+    padding-bottom: 1rem;
+}
+
+.cartItem h3 {
+    display: inline-block;
+}
+
+.cartItem h2 {
+    display: inline-block;
+}
+
+.cartItem button {
+    margin: 0 1rem;
+    font-weight: 500;
+    font-size: 20px;
+    width: 3rem;
+}

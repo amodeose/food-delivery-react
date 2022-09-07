@@ -1,6 +1,6 @@
 import classes from "./Item.module.css";
-import Button from "./UI/Button";
-import { cartActions } from "../store/index";
+import Button from "../UI/Button";
+import { cartActions } from "../../store/index";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 
 const Item = (props) => {
@@ -35,7 +35,9 @@ const Item = (props) => {
       <p className={classes.currentAmount}>Quantity: {currentAmount}</p>
       <div className={classes.itemControls}>
         <Button onClick={addItem}>Add</Button>
-        <Button disabled={!existingItem} onClick={removeItem}>Remove</Button>
+        <Button disabled={!existingItem} onClick={removeItem}>
+          Remove
+        </Button>
       </div>
     </div>
   );
