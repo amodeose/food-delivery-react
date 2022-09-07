@@ -1,4 +1,4 @@
-import { createStore } from "redux";
+import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const defaultCartState = {
   items: [],
@@ -6,75 +6,61 @@ const defaultCartState = {
   totalItems: 0,
 };
 
-const cartReducer = (state = defaultCartState, action) => {
-  if (action.type === "add") {
-    //total price and items can be updated without checking anything
-    const updatedTotalPrice = state.totalPrice + action.payload.price;
-    const updatedTotalItems = state.totalItems + 1;
+const cartSlice = createSlice({
+  name: "cart",
+  initialState: defaultCartState,
+  reducers: {
+    add(state, action) {
+      state.totalPrice += action.payload.price;
+      state.totalItems++;
 
-    //look for existing item in cart and assign it to existingCartItem
-    const existingCartItemIndex = state.items.findIndex(
-      (item) => item.title === action.payload.title
-    );
-    const existingCartItem = state.items[existingCartItemIndex];
+      const index = state.items.findIndex(
+        (item) => item.title === action.payload.title
+      );
+      const existingItem = state.items[index];
 
-    let updatedItems;
+      if (existingItem) {
+        state.items[index].amount++;
+      } else {
+        state.items.push({
+          title: action.payload.title,
+          price: action.payload.price,
+          amount: 1,
+        });
+      }
+    },
 
-    if (existingCartItem) {
-      const updatedItem = {
-        ...existingCartItem,
-        amount: existingCartItem.amount + 1,
-      };
-      updatedItems = [...state.items];
-      updatedItems[existingCartItemIndex] = updatedItem;
-    } else {
-      updatedItems = state.items.concat({
-        title: action.payload.title,
-        price: action.payload.price,
-        amount: 1,
-      });
-    }
+    remove(state, action) {
+      const index = state.items.findIndex(
+        (item) => item.title === action.payload.title
+      );
+      const existingItem = state.items[index];
 
-    return {
-      items: updatedItems,
-      totalPrice: updatedTotalPrice,
-      totalItems: updatedTotalItems,
-    };
-  }
-
-  if (action.type === "remove") {
-    const existingCartItemIndex = state.items.findIndex(
-      (item) => item.title === action.payload.title
-    );
-    const existingCartItem = state.items[existingCartItemIndex];
-
-    if (!existingCartItem) {
-        return state
-    }
-
-    const updatedTotalPrice = state.totalPrice - action.payload.price;
-    const updatedTotalItems = state.totalItems - 1;
-
-    let updatedItems;
-    if (existingCartItem.amount === 1) {
-      updatedItems = state.items.filter(item => item.title !== action.payload.title);
-    } else {
-      const updatedItem = { ...existingCartItem, amount: existingCartItem.amount - 1 };
-      updatedItems = [...state.items];
-      updatedItems[existingCartItemIndex] = updatedItem;
-    }
-
-    return {
-        items: updatedItems,
-        totalPrice: updatedTotalPrice,
-        totalItems: updatedTotalItems,
+      if (!existingItem) {
+        return
       };
 
-  }
+      state.totalPrice -= action.payload.price;
+      state.totalItems--;
 
-  return state;
-};
+      if (state.items[index].amount === 1) {
+        state.items = state.items.filter(item => item.title !== action.payload.title);
+      } else {
+        state.items[index].amount--;
+      };
 
-const store = createStore(cartReducer);
+    },
+  },
+});
+
+
+
+const store = configureStore({
+    reducer: cartSlice.reducer
+});
+
+export const cartActions = cartSlice.actions;
 
 export default store;
+
+

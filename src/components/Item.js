@@ -1,5 +1,6 @@
 import classes from "./Item.module.css";
 import Button from "./UI/Button";
+import { cartActions } from "../store/index";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 
 const Item = (props) => {
@@ -19,11 +20,11 @@ const Item = (props) => {
   };
 
   const addItem = () => {
-    dispatch({ type: "add", payload: currentItem });
+    dispatch(cartActions.add(currentItem));
   };
 
   const removeItem = () => {
-    dispatch({ type: "remove", payload: currentItem });
+    dispatch(cartActions.remove(currentItem));
   };
 
   return (
