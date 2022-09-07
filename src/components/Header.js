@@ -12,7 +12,7 @@ const Header = (props) => {
     <header className={classes.header}>
       <div>
         <h1>React Kitchen</h1>
-        <Button onClick={props.onOpen}>({totalItems}) Cart <CartIcon /> </Button>
+        <Button disabled={totalItems === 0} onClick={props.onOpen}>({totalItems}) Cart <CartIcon /> </Button>
       </div>
       <img src={coverPhoto} alt="table with food and drinks" />
     </header>

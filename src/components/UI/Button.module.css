@@ -17,3 +17,13 @@
   .button:focus {
     outline: none;
   }
+
+  .button:disabled {
+    cursor: default;
+    opacity: 0.3;
+  }
+
+  .button:disabled:hover {
+    background-color: #52616B;
+    border: 1px solid #52616B;
+  }

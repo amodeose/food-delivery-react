@@ -7,6 +7,10 @@ const Cart = (props) => {
   const totalPrice = useSelector((state) => state.totalPrice);
   const items = useSelector((state) => state.items);
 
+  if (items.length === 0) {
+    props.onClose();
+  }
+
   const cartItems = items.map((item) => (
     <CartItem
       key={item.title}
