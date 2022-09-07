@@ -34,7 +34,7 @@ const Item = (props) => {
       <p className={classes.currentAmount}>Quantity: {currentAmount}</p>
       <div className={classes.itemControls}>
         <Button onClick={addItem}>Add</Button>
-        <Button onClick={removeItem}>Remove</Button>
+        {existingItem && <Button onClick={removeItem}>Remove</Button>}
       </div>
     </div>
   );

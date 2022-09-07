@@ -18,10 +18,13 @@
 
 .itemControls {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top:0.5rem;
-  padding: 0 1.5rem;
+}
+
+.itemControls button {
+  margin: 0 0.5rem;
 }
 
 .currentAmount {
