@@ -1,7 +1,11 @@
 import classes from "./Item.module.css";
 import Button from "./UI/Button";
 
+
 const Item = (props) => {
+
+  
+
   return (
     <div className={classes.item}>
       <img src={props.img} />
