@@ -1,7 +1,7 @@
 import classes from "./Header.module.css";
 import coverPhoto from "../assets/wallpaper.jpg";
 import Button from "./UI/Button";
-import CartIcon from "./UI/CartIcon";
+import CartIcon from "../assets/CartIcon";
 
 const Header = (props) => {
   return (
