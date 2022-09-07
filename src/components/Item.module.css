@@ -10,7 +10,7 @@
 }
 
 .item img {
-  height: 10rem;
+  height: 9rem;
   width: 13rem;
   border-radius: 12px;
   margin-bottom: 0.5rem;
@@ -19,6 +19,11 @@
 .itemControls {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top:0.5rem;
   padding: 0 1.5rem;
+}
+
+.currentAmount {
+  font-weight: bold;
 }
