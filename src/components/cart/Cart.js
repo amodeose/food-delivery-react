@@ -2,6 +2,7 @@ import classes from "./Cart.module.css";
 import Modal from "../UI/Modal";
 import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
+import Button from "../UI/Button";
 
 const Cart = (props) => {
   const totalPrice = useSelector((state) => state.totalPrice);
@@ -26,6 +27,11 @@ const Cart = (props) => {
         <h1>Cart</h1>
         <div className={classes.cartItems}>{cartItems}</div>
         <h1>Total Price: ${totalPrice.toFixed(2)}</h1>
+        <div className={classes.cartControls}>
+          <Button>Clear Cart</Button>
+          <Button>Close</Button>
+          <Button>Order</Button>
+        </div>
       </div>
     </Modal>
   );
