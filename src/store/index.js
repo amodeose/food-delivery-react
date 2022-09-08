@@ -50,7 +50,13 @@ const cartSlice = createSlice({
       };
 
     },
-  },
+
+    clear(state) {
+      state.items = [];
+      state.totalItems = 0;
+      state.totalPrice = 0;
+    }
+  }
 });
 
 
