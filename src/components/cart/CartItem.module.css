@@ -2,6 +2,8 @@
     margin: 1rem;
     border-bottom: 2px solid black;
     padding-bottom: 1rem;
+    width: 90%;
+    
 }
 
 .cartItem h3 {
