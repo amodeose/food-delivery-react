@@ -14,7 +14,7 @@ const Cart = (props) => {
   return (
     <Modal onClose={props.onClose}>
       <div className={classes.cartContent}>
-        <CartItems onClose={props.onClose} handleOrder={handleOrder}/>
+        {!showForm && <CartItems onClose={props.onClose} handleOrder={handleOrder}/>}
         {showForm && <OrderForm />}
       </div>
     </Modal>
