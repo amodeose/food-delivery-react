@@ -38,6 +38,8 @@ const Cart = (props) => {
     />
   ));
 
+
+
   return (
     <Modal onClose={props.onClose}>
       <div className={classes.cartContent}>
@@ -48,7 +50,8 @@ const Cart = (props) => {
         <div className={classes.cartControls}>
           <Button onClick={handleClear}>Clear Cart</Button>
           <Button onClick={handleClose}>Close</Button>
-          <Button onClick={handleOrder}>Order</Button>
+          {!showForm && <Button onClick={handleOrder}>Order</Button>}
+          {showForm && <Button>Submit</Button>}
         </div>
       </div>
     </Modal>
