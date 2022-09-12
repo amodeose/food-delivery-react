@@ -1,0 +1,16 @@
+.orderForm {
+    width: 20rem;
+    margin: 1rem auto;
+    text-align: left;
+}
+
+.orderForm input {
+    display:block;
+    width: 95%;
+    margin-bottom: 1rem;
+    height:1.5rem;
+}
+
+.orderForm label {
+    font-weight: bold;
+}
