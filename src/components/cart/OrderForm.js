@@ -4,6 +4,7 @@ import Button from "../UI/Button";
 const OrderForm = (props) => {
   return (
     <form className={classes.orderForm}>
+      <h1>Details</h1>
       <label>First Name</label>
       <input />
       <label>Last Name</label>

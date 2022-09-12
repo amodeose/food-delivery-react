@@ -1,6 +1,6 @@
 .orderForm {
     width: 20rem;
-    margin: 1rem auto;
+    margin: 0 auto;
     text-align: left;
 }
 
@@ -13,6 +13,11 @@
 
 .orderForm label {
     font-weight: bold;
+}
+
+.orderForm h1 {
+    text-align: center;
+    margin: 0;
 }
 
 .formControls {
