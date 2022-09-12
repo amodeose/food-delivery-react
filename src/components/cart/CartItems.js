@@ -17,10 +17,6 @@ const CartItems = (props) => {
     dispatch(cartActions.clear());
   }
 
-  const handleOrder = () => {
-    props.handleOrder();
-  }
-
   if (items.length === 0) {
     handleClose();
   }
@@ -42,7 +38,7 @@ const CartItems = (props) => {
       <div className={classes.cartControls}>
         <Button onClick={handleClear}>Clear Cart</Button>
         <Button onClick={handleClose}>Close</Button>
-        <Button onClick={handleOrder}>Order</Button>
+        <Button onClick={props.handleOrder}>Order</Button>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import classes from "./OrderForm.module.css";
+import Button from "../UI/Button";
 
 const OrderForm = (props) => {
   return (
@@ -11,6 +12,10 @@ const OrderForm = (props) => {
       <input />
       <label>Postal Code</label>
       <input />
+      <div className={classes.formControls}>
+        <Button onClick={props.handleCancel}>Cancel</Button>
+        <Button>Submit</Button>
+      </div>
     </form>
   );
 };

@@ -14,3 +14,14 @@
 .orderForm label {
     font-weight: bold;
 }
+
+.formControls {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.formControls button {
+    height: 3rem;
+    font-size: 1rem;
+}

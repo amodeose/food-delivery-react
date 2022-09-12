@@ -11,11 +11,15 @@ const Cart = (props) => {
     setShowForm(true);
   };
 
+  const handleCancel = () => {
+    setShowForm(false);
+  };
+
   return (
     <Modal onClose={props.onClose}>
       <div className={classes.cartContent}>
         {!showForm && <CartItems onClose={props.onClose} handleOrder={handleOrder}/>}
-        {showForm && <OrderForm />}
+        {showForm && <OrderForm handleCancel={handleCancel}/>}
       </div>
     </Modal>
   );
