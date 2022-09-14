@@ -14,30 +14,30 @@ const OrderForm = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    const firstName = firstNameRef.current.value.trim()
-    const lastName = lastNameRef.current.value.trim()
-    const address = addressRef.current.value.trim()
-    const postalCode = postalCodeRef.current.value.trim()
+    const firstName = firstNameRef.current.value.trim();
+    const lastName = lastNameRef.current.value.trim();
+    const address = addressRef.current.value.trim();
+    const postalCode = postalCodeRef.current.value.trim();
     if (firstName && lastName && address && postalCode) {
       setSubmitted(true);
       dispatch(cartActions.clear());
-    };
+    }
 
     if (!firstName) {
       firstNameRef.current.className = classes.invalid;
-    };
+    }
     if (!lastName) {
       lastNameRef.current.className = classes.invalid;
-    };
+    }
     if (!address) {
       addressRef.current.className = classes.invalid;
-    };
+    }
     if (!postalCode) {
       postalCodeRef.current.className = classes.invalid;
-    };
+    }
   };
 
-  const changeHandler = event => {
+  const changeHandler = (event) => {
     event.target.className = "";
   };
 
@@ -45,9 +45,12 @@ const OrderForm = (props) => {
     return (
       <div>
         <h1>Order Submitted</h1>
+        <div className={classes.formControls}>
+          <Button onClick={props.onClose}>Close</Button>
+        </div>
       </div>
     );
-  };
+  }
 
   return (
     <form onSubmit={submitHandler} className={classes.orderForm}>

@@ -19,7 +19,7 @@ const Cart = (props) => {
     <Modal onClose={props.onClose}>
       <div className={classes.cartContent}>
         {!showForm && <CartItems onClose={props.onClose} handleOrder={handleOrder}/>}
-        {showForm && <OrderForm handleCancel={handleCancel}/>}
+        {showForm && <OrderForm onClose={props.onClose} handleCancel={handleCancel}/>}
       </div>
     </Modal>
   );
