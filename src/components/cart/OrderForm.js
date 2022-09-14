@@ -1,10 +1,12 @@
 import classes from "./OrderForm.module.css";
 import Button from "../UI/Button";
 import { useRef, useState } from "react";
+import { cartActions } from "../../store";
+import { useDispatch } from "react-redux";
 
 const OrderForm = (props) => {
   const [submitted, setSubmitted] = useState(false);
-
+  const dispatch = useDispatch();
   const firstNameRef = useRef();
   const lastNameRef = useRef();
   const addressRef = useRef();
@@ -18,6 +20,7 @@ const OrderForm = (props) => {
     const postalCode = postalCodeRef.current.value.trim()
     if (firstName && lastName && address && postalCode) {
       setSubmitted(true);
+      dispatch(cartActions.clear());
     };
 
     if (!firstName) {
@@ -36,7 +39,7 @@ const OrderForm = (props) => {
 
   const changeHandler = event => {
     event.target.className = "";
-  }
+  };
 
   if (submitted) {
     return (
@@ -44,7 +47,7 @@ const OrderForm = (props) => {
         <h1>Order Submitted</h1>
       </div>
     );
-  }
+  };
 
   return (
     <form onSubmit={submitHandler} className={classes.orderForm}>
